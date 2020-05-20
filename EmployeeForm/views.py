@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from EmployeeForm.forms import EmployeeForm
 from EmployeeForm import models
 
@@ -9,7 +9,7 @@ def index(request):
 
 def form(request):
     form = {'form': EmployeeForm}
-    print("Hooooooooooooooooooo")
+    # print("Hooooooooooooooooooo")
 
     if request.method == "POST":
         form = EmployeeForm(request.POST)
@@ -19,9 +19,7 @@ def form(request):
             # for key, value in form.cleaned_data:
                 # print(key, ' : ', value)
             form.save(commit=True)
-            print("DFSAAAAAAAAAAA")
-    else:
-        print("allah kaam bana de")
+            return HttpResponse("<h1> Thank you for using our service.We will contact you soon </h1>")
 
     form = {'form': EmployeeForm}
     return render(request, 'EmployeeForm/form.html', context=form)
@@ -33,3 +31,8 @@ def display_employee(request):
     d = models.Employee_Model.objects.order_by('name')
     d = {'d':d}
     return render(request, 'EmployeeForm/employee.html', context=d)
+
+
+def thank_you(request):
+    pass
+

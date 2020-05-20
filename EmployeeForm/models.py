@@ -13,7 +13,7 @@ class Employee_Model(models.Model):
     social_security = models.CharField(max_length = 26, default='empty')
     hire_date = models.DateField(default=date.today)
     birth_date = models.DateField(default=date.today)
-    hourly_rate = models.FloatField(min_value=0, max_value=100, default=10)
+    hourly_rate = models.FloatField(default=10)
     title = models.CharField(max_length = 26, default='empty')
     status = models.CharField(max_length = 26, default='empty')
     gender = models.CharField(max_length = 7, default='male')

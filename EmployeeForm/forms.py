@@ -53,7 +53,7 @@ class EmployeeForm(ModelForm, forms.Form):
         'class' :"form-control",
         'placeholder' : 'Birth Date'
     }))
-    hourly_rate = forms.DecimalField(initial = 0.9, widget = forms.NumberInput(attrs = {
+    hourly_rate = forms.DecimalField(min_value=0, max_value=100, initial = 0.9, widget = forms.NumberInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Hourly Rate'
     }))
