@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        *{
+            text-align: center;
+        }
+        .jumbotron{
+            background-color: rgba(173, 216, 230, 0.836);
+            width: 60%;
+            margin-left: 20%;
+        
+        }
+        /* .container{
+            background-image: url("https://www.bing.com/th?id=OHR.RoaringFork_ROW0924141195_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");
+        } */
+
+        @media only screen and (max-width: 900px) {
+            .jumbotron {
+                width: 100%;
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="jumbotron">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- {{form.as_p}} -->
+            {% for field in form.visible_fields %}
+            <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">{{ field.label }}:</span>
+                </div>
+                {{field}}
+            </div>
+            {% endfor %}
+            
+             <input type="submit" value="Submit" class="btn btn-lg btn-primary">
+        </form>
+    </div>
+    
+</body>
+</html>

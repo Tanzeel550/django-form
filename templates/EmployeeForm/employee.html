@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee list</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .div1{
+            margin: 0 2%;
+        }
+    </style>
+</head>
+<body>
+    {% if d%}
+    <div class="div1 table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <th>name</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>zip code</th>
+                <th>email</th>
+                <th>password</th>
+                <th>social security</th>
+                <th>hire date</th>
+                <th>birth date</th>
+                <th>status</th>
+                <th>gender</th>
+                <th>worked before</th>
+            </thead>
+            {% for i in d %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.city}}</td>
+                <td>{{i.state}}</td>
+                <td>{{i.zip_code}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.social_security}}</td>
+                <td>{{i.hire_date}}</td>
+                <td>{{i.birth_date}}</td>
+                <td>{{i.status}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.worked_before}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+</body>
+</html>
