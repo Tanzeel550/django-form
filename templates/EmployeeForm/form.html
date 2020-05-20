@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'stylesheets/css/bootstrap.min.css' %}">
+    <script src="{% static 'stylesheets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'stylesheets/js/popper.min.js' %}"></script>
+    <script src="{% static 'stylesheets/js/bootstrap.min.js' %}"></script>
 
     <style>
         *{
@@ -20,7 +22,7 @@
         
         }
         .container{
-            background-image: url("https://www.bing.com/th?id=OHR.RoaringFork_ROW0924141195_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");
+            background-image: url("{% static '/images/bg-img.jpg' %}");
         }
 
         @media only screen and (max-width: 900px) {
@@ -51,3 +53,7 @@
     
 </body>
 </html>
+
+<script>
+    // alert({{form.errors}})
+</script>

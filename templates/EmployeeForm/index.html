@@ -1,11 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'stylesheets/css/bootstrap.min.css' %}">
+    <script src="{% static 'stylesheets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'stylesheets/js/popper.min.js' %}"></script>
+    <script src="{% static 'stylesheets/js/bootstrap.min.js' %}"></script>
+
 </head>
 <body>
-    
+    <h1>Go to /form to go to see the form</h1>
+    <a href="form.html">Go now</a>
+    <h1>Go to /list to see the users entered</h1>
+    <a href="employee.html"></a>
 </body>
 </html>
