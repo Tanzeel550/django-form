@@ -2,14 +2,12 @@ from django import forms
 from django.forms import ModelForm
 from EmployeeForm.models import Employee_Model
 from datetime import date
+from django.core import validators
 
 gender_choices = [
     ('M','Male'),('F',"Female"),('B', 'both')
 ]
 
-def check_email(value):
-    if value.endswith('.com') == False:
-        raise forms.ValidationError("Oops! you have typed wrong email address.")
 
 class EmployeeForm(ModelForm, forms.Form):
     name = forms.CharField(max_length = 26, widget=forms.TextInput(attrs={
@@ -20,20 +18,20 @@ class EmployeeForm(ModelForm, forms.Form):
         'class' :"form-control",
         'placeholder' : 'Address'
     }))
-    city = forms.CharField(initial = 'tanzeel',max_length = 16, widget = forms.TextInput(attrs = {
+    city = forms.CharField(max_length = 16, widget = forms.TextInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'City'
     }))
-    state = forms.CharField(initial = 'tanzeel',max_length = 16, widget = forms.TextInput(attrs = {
+    state = forms.CharField(max_length = 16, widget = forms.TextInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'State'
     }))
-    zip_code = forms.IntegerField(initial = 92 ,widget = forms.NumberInput(attrs = {
+    zip_code = forms.IntegerField(widget = forms.NumberInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Zip code'
     }))
     # REMEMBER : must end with .com
-    email = forms.EmailField(initial = 'tanzeel@gjl.com', validators = [check_email], widget = forms.EmailInput(attrs = {
+    email = forms.EmailField(widget = forms.EmailInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Email'
     }))
@@ -41,7 +39,7 @@ class EmployeeForm(ModelForm, forms.Form):
         'class' :"form-control",
         'placeholder' : 'Password'
     }))
-    social_security = forms.CharField(initial = 'tanzeel',max_length = 26, widget = forms.TextInput(attrs = {
+    social_security = forms.CharField(max_length = 26, widget = forms.TextInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Social Security'
     }))
@@ -49,19 +47,19 @@ class EmployeeForm(ModelForm, forms.Form):
         'class' :"form-control",
         'placeholder' : 'Hire Date'
     }))
-    birth_date = forms.DateField(initial = date.today,widget = forms.DateInput(attrs = {
+    birth_date = forms.DateField(widget = forms.DateInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Birth Date'
     }))
-    hourly_rate = forms.DecimalField(min_value=0, max_value=100, initial = 0.9, widget = forms.NumberInput(attrs = {
+    hourly_rate = forms.DecimalField(min_value=0, max_value=100, widget = forms.NumberInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Hourly Rate'
     }))
-    title = forms.CharField(initial = 'tanzeel',max_length = 26, widget = forms.TextInput(attrs = {
+    title = forms.CharField(max_length = 26, widget = forms.TextInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Title of job'
     }))
-    status = forms.CharField(initial = 'tanzeel',max_length = 26, widget = forms.TextInput(attrs = {
+    status = forms.CharField(max_length = 26, widget = forms.TextInput(attrs = {
         'class' :"form-control",
         'placeholder' : 'Status'
     }))
