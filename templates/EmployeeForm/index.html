@@ -11,11 +11,22 @@
     <script src="{% static 'stylesheets/js/popper.min.js' %}"></script>
     <script src="{% static 'stylesheets/js/bootstrap.min.js' %}"></script>
 
+    <style>
+        a{
+            color: white;
+        }
+        a:hover{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+
 </head>
-<body>
-    <h1>Go to /form to go to see the form</h1>
-    <a href="form.html">Go now</a>
+<body class="container">
+    <br>
+    <h1>Hey do you want to go to form. Click here</h1>
+    <button class="btn btn-primary btn-lg"><a href=form.html>Form</a></button>    
     <h1>Go to /list to see the users entered</h1>
-    <a href="employee.html"></a>
+    <button class="btn btn-primary btn-lg"><a href=employee.html>Employee list</a></button>  
 </body>
 </html>
