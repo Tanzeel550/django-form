@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from EmployeeForm import views
 
+# app_name = 'form_app'
 
+# urlpatterns = [
+#     url(r'^$', views.index, name='index'),
+#     url(r'^employee', views.employee, name='employee'),
+#     url(r'^form', views.form, name='form'),
+#     url(r'^list', views.display_employee, name='list'),
+#     path('admin/', admin.site.urls),
+# ]
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^employee', views.employee),
-    url(r'^form', views.form),
-    url(r'^list', views.display_employee),
+    url(r'^$', views.index, name='index'),
+    url(r'^form', include('EmployeeForm.urls',namespace='form_app')),
     path('admin/', admin.site.urls),
 ]

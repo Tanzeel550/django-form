@@ -25,8 +25,8 @@
 <body class="container">
     <br>
     <h1>Hey do you want to go to form. Click here</h1>
-    <button class="btn btn-primary btn-lg"><a href=form.html>Form</a></button>    
+    <button class="btn btn-primary btn-lg"><a href='{% url "form_app:form" %}'>Form</a></button> 
     <h1>Go to /list to see the users entered</h1>
-    <button class="btn btn-primary btn-lg"><a href=employee.html>Employee list</a></button>  
+    <button class="btn btn-primary btn-lg"><a href='{% url "form_app:employee_list" %}'>Employee list</a></button>  
 </body>
 </html>

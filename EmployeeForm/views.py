@@ -24,13 +24,11 @@ def form(request):
     form = {'form': EmployeeForm}
     return render(request, 'EmployeeForm/form.html', context=form)
 
-def employee(request):
-    return render(request, 'EmployeeForm/employee.html')
 
-def display_employee(request):
+def employee_list(request):
     d = models.Employee_Model.objects.order_by('name')
     d = {'d':d}
-    return render(request, 'EmployeeForm/employee.html', context=d)
+    return render(request, 'EmployeeForm/employee_list.html', context=d)
 
 
 def thank_you(request):
